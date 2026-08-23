@@ -13,8 +13,11 @@ Data preprocessing comes from:
 
 # Train
 #parser.add_argument('--data_definition', type=str, default='WFLW', help="COFW, 300W, WFLW")
+
 python  train_300w.py    
+
 # Test
+
 python  test_jit_model.py
 
 # Model result # model The extraction code is: 1234
