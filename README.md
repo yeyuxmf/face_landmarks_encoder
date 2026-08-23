@@ -4,7 +4,7 @@ This is a direct coordinate regression method that eliminates the post-processin
 # Model introduction
 "The paper is currently being prepared." Ongoing updates  
 This is a regression-based model, which has the characteristics of high accuracy, no missing points and low memory consumption compared with the best heat map model in terms of accuracy.
-
+It is possible to modify the model structure to reduce parameters, speed up inference, and enable deployment on edge devices.
 # DataSet
 Data preprocessing comes from: 
 1. https://github.com/huangyangyu/ADNet
