@@ -21,6 +21,7 @@ python  train_300w.py
 python  test_jit_model.py
 
 # Model result # model The extraction code is: 1234
+These are merely partial results, which are inconsistent with those reported in the paper.
 batch size =1, GPU: RTX 3060,  CPU: 12th Gen Intel Core(TM) i7-12700F 2.1GHz
 Dataset | Model | test gpu| gflops G | params M | FPS  | ION | IPN | model weights 
 --- | --- | --- | --- | --- | --- | --- | --- | --- 
