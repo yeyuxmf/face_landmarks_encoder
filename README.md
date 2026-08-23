@@ -19,7 +19,7 @@ WFLW | ResNet18    + encoder | 269MB | 5.246 | 20.88 | 149.5 | 4.0513 | 5.7311 |
 WFLW | MobileNetV3 + encoder | 195MB | 1.187 | 6.063 | 198.5 | 4.1837 | 5.9193 | [baidu](https://pan.baidu.com/s/1sRGdWvxnCBm6a_ETL9o2vA)
 WFLW | MobileNetV3 + encoder | 194MB | 0.720 | 3.908 | 236.7 | 4.2798 | 6.0575 | [baidu](https://pan.baidu.com/s/1cxT5pok8B3p14fVLbmYCLw)
 WFLW | MobileNetV3 + encoder | 210MB | 0.603 | 3.442 | 284.3 | 4.4047 | 6.3332 | [baidu](https://pan.baidu.com/s/12eBRv9EnsFYGSWK06BAxqw)
-300W | ResNet34    + encoder | 257MB | 10.20 | 44.52 | 60.5  | 2.8677 | 4.0238 | [baidu]()
+300W | ResNet34    + encoder | 409MB | 10.20 | 44.52 | 93.9  | 2.8677 | 4.0238 | [baidu](https://pan.baidu.com/s/16ZnCu1LTJtafaXnQdJvzeA)
 300W | ResNet18    + encoder | 257MB | 5.117 | 20.88 | 153.5 | 2.8797 | 4.0409 | [baidu](https://pan.baidu.com/s/1NAxkBTTMxx4meAk2Ao54pw)
 300W | MobileNetV3 + encoder | 220MB | 1.861 | 9.922 | 157.5 | 2.9365 | 4.1209 | [baidu](https://pan.baidu.com/s/1vYoox7kgyh9rY2RF4IUavg)
 300W | MobileNetV3 + encoder | 180MB | 0.774 | 3.897 | 249.8 | 2.9403 | 4.1255 | [baidu](https://pan.baidu.com/s/1qey_OruuDY17mo97n5Nhk)
