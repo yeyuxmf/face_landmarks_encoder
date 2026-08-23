@@ -14,7 +14,7 @@ Data preprocessing comes from:
 # Train
 python  train_300w.py    #parser.add_argument('--data_definition', type=str, default='WFLW', help="COFW, 300W, WFLW")
 # Test
-
+test_jit_model.py
 
 # Model result # model The extraction code is: 1234
 batch size =1, GPU: RTX 3060,  CPU: 12th Gen Intel Core(TM) i7-12700F 2.1GHz
