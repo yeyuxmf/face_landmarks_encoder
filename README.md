@@ -10,6 +10,12 @@ Data preprocessing comes from:
 1. https://github.com/huangyangyu/ADNet
 2. https://github.com/ZhenglinZhou/STAR
 
+
+# Train
+python  train_300w.py    #parser.add_argument('--data_definition', type=str, default='WFLW', help="COFW, 300W, WFLW")
+# Test
+
+
 # Model result # model The extraction code is: 1234
 batch size =1, GPU: RTX 3060,  CPU: 12th Gen Intel Core(TM) i7-12700F 2.1GHz
 Dataset | Model | test gpu| gflops G | params M | FPS  | ION | IPN | model weights 
