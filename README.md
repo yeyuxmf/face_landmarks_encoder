@@ -23,7 +23,7 @@ python  test_jit_model.py
 
 # Paper Model result # model The extraction code is: 1234
 paper_model_weights:
-https://pan.baidu.com/s/1vNimhVd6wQ6fvHLg8gGAZQ?pwd=g7n9 提取码: g7n9
+[baidu](https://pan.baidu.com/s/1vNimhVd6wQ6fvHLg8gGAZQ?pwd=g7n9) 提取码: g7n9
 batch size =1, GPU: RTX 5070ti,  CPU: Intel(R) Core(TM) i9-14900KF   3.20 GHz
 Dataset | Model | test gpu| gflops G | params M | FPS  | ION | IPN | model weights 
 --- | --- | --- | --- | --- | --- | --- | --- | --- 
