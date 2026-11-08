@@ -299,6 +299,6 @@ def main():
 # The images converted by this script are ready to use directly,
 # with their formats fully aligned with the train.tsv and test.tsv provided by the star author.
 # The only thing left untested is whether these two converted tsv files can run properly.
-
+#这个脚本转出来的图片直接就能用，格式完全跟star作者给的train.tsv、test.tsv对上了，唯独转出来的这两个tsv文件我还没试过能不能正常跑通
 if __name__ == "__main__":
     main()
