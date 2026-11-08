@@ -32,7 +32,6 @@ Dataset | Model | test gpu| gflops G | params M | FPS  | ION |  model weights
 WFLW | ResNet34    + encoder | 535MB | 11.80 | 53.49 | 81.1  | 3.97 | [baidu]()
 WFLW | ResNet18    + encoder | 493MB | 9.38  | 43.38 | 86.7  | 4.01 | [baidu]()
 WFLW | ShuffleNetV2 + encoder| 351MB | 2.58  | 9.49  | 131.1 | 4.11 | [baidu]()
-
 300W | ResNet34    + encoder | 503MB | 10.04 | 53.49 | 82.8  | 2.85 | [baidu]()
 300W | ResNet18    + encoder | 461MB | 8.62  | 43.38 | 88.2  | 2.88 | [baidu]()
 300W | ShuffleNetV2 + encoder| 319MB | 2.45  | 9.49  | 137.1 | 2.91 | [baidu]()
