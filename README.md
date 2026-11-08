@@ -21,7 +21,7 @@ python  train_300w.py
 python  test_jit_model.py
 
 
-# Paper Model result # model The extraction code is: 1234
+# Paper Model result # model The extraction code is: 
 paper_model_weights:
 [baidu](https://pan.baidu.com/s/1vNimhVd6wQ6fvHLg8gGAZQ?pwd=g7n9) 提取码: g7n9
 
