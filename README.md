@@ -26,7 +26,8 @@ paper_model_weights:
 [baidu](https://pan.baidu.com/s/1vNimhVd6wQ6fvHLg8gGAZQ?pwd=g7n9) 提取码: g7n9
 
 batch size =1, GPU: RTX 5070ti,  CPU: Intel(R) Core(TM) i9-14900KF   3.20 GHz
-Dataset | Model | test gpu| gflops G | params M | FPS  | ION | model weights 
+
+Dataset | Model | test gpu| gflops G | params M | FPS  | ION | IPN | model weights 
 --- | --- | --- | --- | --- | --- | --- | --- | --- 
 WFLW | ResNet34    + encoder | 535MB | 11.80 | 53.49 | 81.1  | 3.97 | [baidu]()
 WFLW | ResNet18    + encoder | 493MB | 9.38  | 43.38 | 86.7  | 4.01 | [baidu]()
