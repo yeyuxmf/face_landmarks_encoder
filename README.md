@@ -20,6 +20,28 @@ python  train_300w.py
 
 python  test_jit_model.py
 
+
+# Paper Model result # model The extraction code is: 1234
+paper_model_weights:
+https://pan.baidu.com/s/1vNimhVd6wQ6fvHLg8gGAZQ?pwd=g7n9 提取码: g7n9
+batch size =1, GPU: RTX 5070ti,  CPU: Intel(R) Core(TM) i9-14900KF   3.20 GHz
+Dataset | Model | test gpu| gflops G | params M | FPS  | ION | IPN | model weights 
+--- | --- | --- | --- | --- | --- | --- | --- | --- 
+WFLW | ResNet34    + encoder | 418MB | 11.80 | 53.52 | 70.7  | 4.0065 | 5.6676 | [baidu]()
+WFLW | ResNet18    + encoder | 269MB | 5.246 | 20.88 | 149.5 | 4.0513 | 5.7311 | [baidu]()
+WFLW | MobileNetV3 + encoder | 195MB | 1.187 | 6.063 | 198.5 | 4.1837 | 5.9193 | [baidu]()
+WFLW | MobileNetV3 + encoder | 194MB | 0.720 | 3.908 | 236.7 | 4.2798 | 6.0575 | [baidu]()
+WFLW | MobileNetV3 + encoder | 210MB | 0.603 | 3.442 | 284.3 | 4.4047 | 6.3332 | [baidu]()
+300W | ResNet34    + encoder | 409MB | 10.20 | 44.52 | 93.9  | 2.8677 | 4.0238 | [baidu]()
+300W | ResNet18    + encoder | 257MB | 5.117 | 20.88 | 153.5 | 2.8797 | 4.0409 | [baidu]()
+300W | MobileNetV3 + encoder | 220MB | 1.861 | 9.922 | 157.5 | 2.9365 | 4.1209 | [baidu]()
+300W | MobileNetV3 + encoder | 180MB | 0.774 | 3.897 | 249.8 | 2.9403 | 4.1255 | [baidu]()
+300W | MobileNetV3 + encoder | 170MB | 0.707 | 3.700 | 298.1 | 3.1742 | 4.4541 | [baidu]()
+300W | MobileNetV3 + encoder | 170MB | 0.601 | 3.442 | 286.1 | 3.0328 | 4.2559 | [baidu]()
+300W | Comparative：  STAR   | 2400MB| 17.05 | 13.37 | 55.1  | 2.8704 | ~~~~~~ | ~~~~~
+
+
+
 # Model result # model The extraction code is: 1234
 These are merely partial results, which are inconsistent with those reported in the paper.
 batch size =1, GPU: RTX 3060,  CPU: 12th Gen Intel Core(TM) i7-12700F 2.1GHz
