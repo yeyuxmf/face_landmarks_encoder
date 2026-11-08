@@ -27,8 +27,8 @@ paper_model_weights:
 
 batch size =1, GPU: RTX 5070ti,  CPU: Intel(R) Core(TM) i9-14900KF   3.20 GHz
 
-Dataset | Model | test gpu| gflops G | params M | FPS  | ION | model weights 
---- | --- | --- | --- | --- | --- | --- | --- | --- 
+Dataset | Model | test gpu| gflops G | params M | FPS  | ION |  model weights 
+--- | --- | --- | --- | --- | --- | ---  | --- 
 WFLW | ResNet34    + encoder | 535MB | 11.80 | 53.49 | 81.1  | 3.97 | [baidu]()
 WFLW | ResNet18    + encoder | 493MB | 9.38  | 43.38 | 86.7  | 4.01 | [baidu]()
 WFLW | ShuffleNetV2 + encoder| 351MB | 2.58  | 9.49  | 131.1 | 4.11 | [baidu]()
