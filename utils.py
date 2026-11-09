@@ -41,7 +41,7 @@ def cal_eval(model, NME, config, test_loader):
             mask.append(flag)
         with torch.no_grad():
             outputs, inint_coords, prehotmap = model(test_data)
-        outputs =[inint_coords]
+        #outputs =[inint_coords]
             # metrics
         outputs = torch.mean(torch.stack(outputs[-1:], dim=0), dim=0)
         nume = metric_nme.test(outputs[:, :, :2], labels)
