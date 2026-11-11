@@ -97,8 +97,8 @@ def get_cls_embed(layer1, layer2, layer3, output, coords, sizes, wcl):
     cls2 = cls2.squeeze(dim=2).permute(0, 2, 1)
     cls3 = cls3.squeeze(dim=2).permute(0, 2, 1)
     cls4 = cls4.squeeze(dim=2).permute(0, 2, 1)
-
-    cls = cls1 * wcl[1] + cls2 * wcl[2] + cls3 * wcl[3] + cls4 * wcl[0]
+    #
+    cls = cls1 * wcl[1] +cls2 * wcl[2] + cls3 * wcl[3] +cls4 * wcl[0]
 
     return cls
 
@@ -820,65 +820,65 @@ class get_model(nn.Module):
         # sampv =  self.sampcoords.repeat(b, 1, 1)
         # initcoords = torch.concatenate([sampv, output1[:, :, :2].detach()], dim=1)
 
-        # inint_c = get_cls_embed(layer1, layer2, layer3, layer4, output1[:, :, :2].detach(), sizes, self.wcl1)
-        # inint_p = get_cls_embed(pos1, pos2, pos3, pos4, output1[:, :, :2].detach(), sizes, self.wcl2)
-        #
-        # # inint_c = get_cls_embed(layer1, layer2, layer3, layer4, initcoords, sizes, self.wcl1)
-        # # inint_p = get_cls_embed(pos1, pos2, pos3, pos4, initcoords, sizes, self.wcl2)
-        #
-        # #pclsp_embed = inint_p.clone()
-        # #pclsp_embed[:, -cfg.PointNms:,:] = self.pcls_embed.expand(b, -1, -1) + inint_p[:, -cfg.PointNms:,:]* self.inintwp[0]
-        # pclsp_embed = self.pcls_embed.expand(b, -1, -1) + inint_p * self.inintwp[0]
-        #
-        # hs = []
-        # inter_references = []
-        # xc_ = inint_c
-        # xc_ = xc_ #+ pclsp_embed
-        #
-        # reference_points = output1[:, :, :2].clip(0, 1).detach()
-        # init_reference = reference_points
-        # for i, cpb in enumerate(self.DEncoder):
-        #     xc_ = cpb(xc_, pclsp_embed)
-        #     tmp = self.fc_coord_branches[i](xc_)
-        #
-        #     new_reference_points = tmp + inverse_sigmoid(reference_points)
-        #     new_reference_points = new_reference_points.sigmoid()
-        #     reference_points = new_reference_points
-        #
-        #     inter_references.append(reference_points)
-        #     hs.append(xc_)
-        #     #################################
-        #     inint_c = get_cls_embed(layer1, layer2, layer3, layer4, new_reference_points.detach(), sizes, self.wcl1)
-        #     inint_p = get_cls_embed(pos1, pos2, pos3, pos4, new_reference_points.detach(), sizes, self.wcl2)
-        #
-        #     # pclsp_embed = inint_p.clone()
-        #     # pclsp_embed[:, -cfg.PointNms:,:] = self.pcls_embed.expand(b, -1, -1) + inint_p_* self.inintwp[i+1]#
-        #     # xc_[:, -cfg.PointNms:,:]= xc_[:, -cfg.PointNms:,:]+ inint_c_ * self.inintwc[i+1]#
-        #
-        #     pclsp_embed = self.pcls_embed.expand(b, -1, -1) + inint_p * self.inintwp[i+1]#
-        #     xc_= xc_+ inint_c * self.inintwc[i+1]#
-        #
-        #
-        #     xc_ = xc_# + pclsp_embed
-        #
-        # outputs = []
-        # for lvl in range(len(inter_references)):
-        #     if lvl == 0:
-        #         reference = init_reference
-        #     else:
-        #         reference = inter_references[lvl - 1]
-        #     reference = inverse_sigmoid(reference)
-        #
-        #     tmp = self.fc_coord_branches[lvl](hs[lvl])
-        #     tmp = tmp + reference
-        #
-        #     outputs_sigma = self.fc_sigma_branches[lvl](hs[lvl])
-        #
-        #     outputs_coord = tmp.sigmoid()
-        #     delta_coord_output = self.fc_coord_output_branches[lvl](hs[lvl])
-        #     outputs_coord = (outputs_coord + delta_coord_output)
-        #
-        #     outputs_coord = torch.cat([outputs_coord, outputs_sigma], dim=-1)
-        #     outputs.append(outputs_coord)
-        outputs =[output1]
+        inint_c = get_cls_embed(layer1, layer2, layer3, layer4, output1[:, :, :2].detach(), sizes, self.wcl1)
+        inint_p = get_cls_embed(pos1, pos2, pos3, pos4, output1[:, :, :2].detach(), sizes, self.wcl2)
+
+        # inint_c = get_cls_embed(layer1, layer2, layer3, layer4, initcoords, sizes, self.wcl1)
+        # inint_p = get_cls_embed(pos1, pos2, pos3, pos4, initcoords, sizes, self.wcl2)
+
+        #pclsp_embed = inint_p.clone()
+        #pclsp_embed[:, -cfg.PointNms:,:] = self.pcls_embed.expand(b, -1, -1) + inint_p[:, -cfg.PointNms:,:]* self.inintwp[0]
+        pclsp_embed = self.pcls_embed.expand(b, -1, -1) + inint_p * self.inintwp[0]
+
+        hs = []
+        inter_references = []
+        xc_ = inint_c
+        xc_ = xc_ #+ pclsp_embed
+
+        reference_points = output1[:, :, :2].clip(0, 1).detach()
+        init_reference = reference_points
+        for i, cpb in enumerate(self.DEncoder):
+            xc_ = cpb(xc_, pclsp_embed)
+            tmp = self.fc_coord_branches[i](xc_)
+
+            new_reference_points = tmp + inverse_sigmoid(reference_points)
+            new_reference_points = new_reference_points.sigmoid()
+            reference_points = new_reference_points
+
+            inter_references.append(reference_points)
+            hs.append(xc_)
+            #################################
+            inint_c = get_cls_embed(layer1, layer2, layer3, layer4, new_reference_points.detach(), sizes, self.wcl1)
+            inint_p = get_cls_embed(pos1, pos2, pos3, pos4, new_reference_points.detach(), sizes, self.wcl2)
+
+            # pclsp_embed = inint_p.clone()
+            # pclsp_embed[:, -cfg.PointNms:,:] = self.pcls_embed.expand(b, -1, -1) + inint_p_* self.inintwp[i+1]#
+            # xc_[:, -cfg.PointNms:,:]= xc_[:, -cfg.PointNms:,:]+ inint_c_ * self.inintwc[i+1]#
+
+            pclsp_embed = self.pcls_embed.expand(b, -1, -1) + inint_p * self.inintwp[i+1]#
+            xc_= xc_+ inint_c * self.inintwc[i+1]#
+
+
+            xc_ = xc_# + pclsp_embed
+
+        outputs = []
+        for lvl in range(len(inter_references)):
+            if lvl == 0:
+                reference = init_reference
+            else:
+                reference = inter_references[lvl - 1]
+            reference = inverse_sigmoid(reference)
+
+            tmp = self.fc_coord_branches[lvl](hs[lvl])
+            tmp = tmp + reference
+
+            outputs_sigma = self.fc_sigma_branches[lvl](hs[lvl])
+
+            outputs_coord = tmp.sigmoid()
+            delta_coord_output = self.fc_coord_output_branches[lvl](hs[lvl])
+            outputs_coord = (outputs_coord + delta_coord_output)
+
+            outputs_coord = torch.cat([outputs_coord, outputs_sigma], dim=-1)
+            outputs.append(outputs_coord)
+        # outputs =[output1]
         return outputs, output1, hotmap
