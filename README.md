@@ -2,7 +2,6 @@
 Face landmarks, key points, CNN, Transformer, Pytorch, 300W\ WFLW dataset    
 This is a direct coordinate regression method that eliminates the post-processing required by the heatmap-based approach.
 # Model introduction
-"The paper is currently being prepared." Ongoing updates  
 This is a regression-based model, which has the characteristics of high accuracy, no missing points and low memory consumption compared with the best heat map model in terms of accuracy.
 It is possible to modify the model structure to reduce parameters, speed up inference, and enable deployment on edge devices.
 # DataSet
@@ -36,10 +35,6 @@ WFLW | ShuffleNetV2 + encoder| 351MB | 2.58  | 9.49  | 131.1 | 4.11 | [baidu](ht
 300W | ShuffleNetV2 + encoder| 319MB | 2.45  | 9.49  | 137.1 | 2.91 | [baidu](https://pan.baidu.com/s/17uqemoi6OYGVm_BgvAhIiQ?pwd=75su)| 75su
 
 
-
-
-These are the model results for November 2023. I haven't conducted further experiments or written a paper yet, but I plan to do so by the end of this year.
-The source code will be fully open by then.
 
 
 
