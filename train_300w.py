@@ -234,16 +234,16 @@ def train(args, io, config):
 
                     outputs, inint_coords, prehotmap = model(train_data)
                     inint_loss_ = model.Initloss(inint_coords, label_re)
-                    loss1 = inint_loss_#model.loss(outputs[0], label_re)
-                    loss2 = inint_loss_#model.loss(outputs[1], label_re)
-                    loss3 = inint_loss_#model.loss(outputs[2], label_re)
-                    loss4 = loss3#model.loss(outputs[3], label_re)
-                    loss = (loss1 + loss2 + loss3)# + loss4)
+                    loss1 = model.loss(outputs[0], label_re)
+                    loss2 = model.loss(outputs[1], label_re)
+                    loss3 = model.loss(outputs[2], label_re)
+                    loss4 = model.loss(outputs[3], label_re)
+                    loss = (loss1 + loss2 + loss3 + loss4)
 
                     # loss_ml_, loss_dl_, loss_re_, loss_fl_ = rcal_loss(prehotmap, pointmap)
                     # edgeloss_ =  loss_fl_# edge_loss(outputs, label_re.repeat(1, 4, 1))
                     loss_ml_, loss_dl_ = loss1, loss1
-                    loss = inint_loss_# +loss # + loss_ml_+loss_dl_#+ loss_ml_+ loss_dl_ #+ edgeloss_ +
+                    loss = inint_loss_ +loss # + loss_ml_+loss_dl_#+ loss_ml_+ loss_dl_ #+ edgeloss_ +
 
                     scaler.scale(loss).backward()
                     # Unscales gradients and calls
