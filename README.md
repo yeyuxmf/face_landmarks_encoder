@@ -33,7 +33,11 @@ WFLW | ShuffleNetV2 + encoder| 351MB | 2.58  | 9.49  | 131.1 | 4.11 | [baidu](ht
 300W | ResNet34    + encoder | 503MB | 11.04 | 53.49 | 82.8  | 2.85 | [baidu](https://pan.baidu.com/s/1RH_zqWhzegqkfqQSCDcUtQ?pwd=shkr)| shkr
 300W | ResNet18    + encoder | 461MB | 8.62  | 43.38 | 88.2  | 2.88 | [baidu](https://pan.baidu.com/s/1KOnpJkhKIeb4C7YT7t5Z0Q?pwd=3n4g)| 3n4g
 300W | ShuffleNetV2 + encoder| 319MB | 2.45  | 9.49  | 137.1 | 2.91 | [baidu](https://pan.baidu.com/s/17uqemoi6OYGVm_BgvAhIiQ?pwd=75su)| 75su
-
+Dataset | Model | test gpu| gflops G | params M | FPS  | IPN |  model weights |提取码: 
+--- | --- | --- | --- | --- | --- | ---  | --- | --- 
+COFW | ResNet34    + encoder |  |   | 53.49 |   | 4.70 | [baidu](https://pan.baidu.com/s/1cd3iVTJ0q8GkQsF-srEEkQ?pwd=gsdj)| gsdj
+COFW | ResNet18    + encoder |  |   | 43.38 |   | 4.64 | [baidu](https://pan.baidu.com/s/1G25TU4GdTI7SGxqCM6k9yg?pwd=6ur9)| 6ur9
+COFW | ShuffleNetV2 + encoder|  |   | 9.49  |   | 4.61 | [baidu](https://pan.baidu.com/s/1mOVE4HYZpZj0E4F2G-FynQ?pwd=hft5)| hft5
 
 
 
