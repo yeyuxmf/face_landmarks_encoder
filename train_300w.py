@@ -243,7 +243,7 @@ def train(args, io, config):
                     # loss_ml_, loss_dl_, loss_re_, loss_fl_ = rcal_loss(prehotmap, pointmap)
                     # edgeloss_ =  loss_fl_# edge_loss(outputs, label_re.repeat(1, 4, 1))
                     loss_ml_, loss_dl_ = loss1, loss1
-                    loss = inint_loss_ +loss # + loss_ml_+loss_dl_#+ loss_ml_+ loss_dl_ #+ edgeloss_ +
+                    loss = inint_loss_ +loss  + (loss_ml_+loss_dl_)*0.01#+ loss_ml_+ loss_dl_ #+ edgeloss_ +
 
                     scaler.scale(loss).backward()
                     # Unscales gradients and calls
