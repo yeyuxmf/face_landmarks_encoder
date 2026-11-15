@@ -773,7 +773,7 @@ class get_model(nn.Module):
         # layer3 = self.convm3(layer3)
         # layer4 = self.convm4(layer4)
         layer4 = self.aifi(layer4)
-        hotmap = None#self.out1(layer4)
+        hotmap = self.out1(layer4)
         layer2, layer3, layer4 = self.head(layer2, layer3, layer4)
 
 
