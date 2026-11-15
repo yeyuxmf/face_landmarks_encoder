@@ -24,6 +24,7 @@ from net.face_point_net_head import get_model
 #from shuffleNet.face_point_net_shufflenet import get_model
 #from mobilenet.face_point_net_mobilenet import get_model
 from data.alignmentDataset import AlignmentDataset
+from net.regression_loss import rcal_loss
 from nme import NME
 from c_adamw import AdamW as C_AdamW
 import config.config as cfg
