@@ -240,9 +240,9 @@ def train(args, io, config):
                     loss4 = model.loss(outputs[3], label_re)
                     loss = (loss1 + loss2 + loss3 + loss4)
 
-                    # loss_ml_, loss_dl_, loss_re_, loss_fl_ = rcal_loss(prehotmap, pointmap)
+                    loss_ml_, loss_dl_, loss_re_, loss_fl_ = rcal_loss(prehotmap, pointmap)
                     # edgeloss_ =  loss_fl_# edge_loss(outputs, label_re.repeat(1, 4, 1))
-                    loss_ml_, loss_dl_ = loss1, loss1
+                    #loss_ml_, loss_dl_ = loss1, loss1
                     loss = inint_loss_ +loss  + (loss_ml_+loss_dl_)*1.0#+ loss_ml_+ loss_dl_ #+ edgeloss_ +
 
                     scaler.scale(loss).backward()
