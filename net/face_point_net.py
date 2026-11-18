@@ -299,7 +299,7 @@ class get_model(nn.Module):
 
         self.out1 = nn.Conv2d(in_channels= self.numchannel, out_channels=1, kernel_size=1, stride=1)
 
-        self.Tsize = torch.tensor([7, 7]).int()
+        self.Tsize = torch.tensor([8, 8]).int()
         self.TsizeS = self.Tsize*2
         self.pcls_embed = nn.Parameter(torch.zeros(1, cfg.PointNms, nchannel), requires_grad=False)
 
